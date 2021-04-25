@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/phones', [PhonesControlller::class, 'getPhoneList']);
-Route::post('/phones', [PhonesControlller::class, 'uploadPhone']);
+Route::get('/phones', [PhonesController::class, 'getPhoneList']);
+Route::post('/phones', [PhonesController::class, 'uploadPhone']);
