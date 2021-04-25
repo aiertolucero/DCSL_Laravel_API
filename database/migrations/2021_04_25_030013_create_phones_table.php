@@ -15,9 +15,15 @@ class CreatePhonesTable extends Migration
     {
         Schema::create('phones', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('image_url', 100);
+            $table->string('name');
+            $table->string('manufacturer');
             $table->text('description');
+            $table->string('color');
+            $table->float('price', 8, 2);
+            $table->string('imageFileName');
+            $table->string('screen');
+            $table->string('processor');
+            $table->integer('ram');
             $table->softDeletes();
             $table->timestamps();
         });

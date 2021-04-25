@@ -18,6 +18,16 @@ class Phones extends Model
      */
     protected $table = 'phones';
 
-    protected $fillable = ['name', 'description', 'image_url'];
+    protected $fillable = [
+                        'name', 
+                        'manufacturer',
+                        'description', 
+                        'color',
+                        'price',
+                        'imageFileName',
+                        'screen',
+                        'processor',
+                        'ram'
+                    ];
 
 }

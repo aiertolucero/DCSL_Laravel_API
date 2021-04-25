@@ -15,8 +15,14 @@ class PhonesController extends Controller
         
         $validated = $request->validate([
             'name' => 'required',
+            'manufacturer' => 'required',
             'description' => 'required',
-            'image_url' => 'required',
+            'color' => 'required',
+            'price' => 'required',
+            'imageFileName' => 'required',
+            'screen' => 'required',
+            'processor' => 'required',
+            'ram' => 'required'
         ]);
         
         $phone = new Phones;
