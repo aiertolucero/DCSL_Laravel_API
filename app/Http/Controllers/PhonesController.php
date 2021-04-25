@@ -28,8 +28,14 @@ class PhonesController extends Controller
         $phone = new Phones;
 
         $phone->name = $request->name;
+        $phone->manufacturer = $request->manufacturer;
         $phone->description = $request->description;
-        $phone->image_url = $request->image_url;
+        $phone->color = $request->color;
+        $phone->price = $request->price;
+        $phone->imageFileName = $request->imageFileName;
+        $phone->screen = $request->screen;
+        $phone->processor = $request->processor;
+        $phone->ram = $request->ram;
 
         if(!$phone->save()){
             return response()->json([
