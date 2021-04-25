@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/phones', 'PhonesControlller@getPhoneList');
+Route::post('/phones', 'PhonesControlller@uploadPhone');
