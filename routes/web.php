@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PhonesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +17,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/phones', [PhonesController::class, 'getPhoneList']);
-Route::post('/phones', [PhonesController::class, 'uploadPhone']);
