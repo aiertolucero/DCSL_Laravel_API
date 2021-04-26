@@ -22,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/phones', [PhonesController::class, 'getPhoneList']);
 Route::post('/phones', [PhonesController::class, 'uploadPhone']);
+Route::put('/phones/{id}', [PhonesController::class, 'updatePhone']);
+Route::delete('/phones/{id}', [PhonesController::class, 'deletePhone']);
