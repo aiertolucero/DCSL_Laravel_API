@@ -1,4 +1,4 @@
-# DCSL_API
+# Phone Catalog Laravel API
 
 ## To run:
 1. Create a `.env` file copy details from `.env.example`
@@ -11,3 +11,5 @@
 When accessing the api routes you need to add `Basic-Token` to your header request with a value of `caramelmacchiato`.
 
 You can change the token value in the `.env` file `BASIC_AUTH_TOKEN`
+
+### Live API url : https://glacial-refuge-41061.herokuapp.com/
