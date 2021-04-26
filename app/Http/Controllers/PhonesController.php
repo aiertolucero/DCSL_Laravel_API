@@ -86,13 +86,19 @@ class PhonesController extends Controller
 
     public function deletePhone($id){
         try {
-            $phone = Phones::find(1);
+            $phone = Phones::find($id);
 
-            $phone->delete();
+            if($phone){
+                $phone->delete();
 
-            return response()->json([
-                'success' => true
-            ]);
+                return response()->json([
+                    'success' => true
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false
+                ]);
+            }
         } catch(Exception $e) {
             return response()->json([
                 'success' => false
