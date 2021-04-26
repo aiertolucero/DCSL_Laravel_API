@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Phones;
+use Illuminate\Support\Facades\Validator;
 
 class PhonesController extends Controller
 {
@@ -13,18 +14,25 @@ class PhonesController extends Controller
 
     public function uploadPhone(Request $request){
         
-        $validated = $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'manufacturer' => 'required',
             'description' => 'required',
             'color' => 'required',
-            'price' => 'required',
+            'price' => 'required|numeric',
             'imageFileName' => 'required',
             'screen' => 'required',
             'processor' => 'required',
-            'ram' => 'required'
+            'ram' => 'required|integer'
         ]);
-        
+
+        if($validator->fails())
+        {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+
         $phone = new Phones;
 
         $phone->name = $request->name;
@@ -50,17 +58,24 @@ class PhonesController extends Controller
     
     public function updatePhone(Request $request, $id){
 
-        $validated = $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'manufacturer' => 'required',
             'description' => 'required',
             'color' => 'required',
-            'price' => 'required',
+            'price' => 'required|numeric',
             'imageFileName' => 'required',
             'screen' => 'required',
             'processor' => 'required',
-            'ram' => 'required'
+            'ram' => 'required|integer'
         ]);
+
+        if($validator->fails())
+        {
+            return response()->json([
+                'success' => false
+            ]);
+        }
 
         $phone = Phones::find($id);
 
