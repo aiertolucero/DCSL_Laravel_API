@@ -49,6 +49,7 @@ class PhonesController extends Controller
     }
     
     public function updatePhone(Request $request, $id){
+
         $validated = $request->validate([
             'name' => 'required',
             'manufacturer' => 'required',
